@@ -9,6 +9,11 @@ const GlobalStyle = createGlobalStyle`
         --light-grayish-cyan: hsl(185, 41%, 84%);
         --very-light-grayish-cyan: hsl(189, 41%, 97%);
         --white: hsl(0, 0%, 100%);
+        --app-bg-color: #C5E4E7; 
+    }
+
+    body{
+        background-color: var(--app-bg-color);
     }
 `;
 
