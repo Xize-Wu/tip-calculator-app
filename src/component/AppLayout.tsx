@@ -9,7 +9,6 @@ const StyledLayout = styled.div`
     align-items: center;
     gap: 4rem;
     width: 100%;
-    height: 100%;
     padding-top: 13rem;
 `;
 

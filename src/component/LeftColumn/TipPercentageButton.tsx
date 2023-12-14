@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { useDispatch } from "react-redux";
-import { decrement } from "../../features/counterSlice";
+import { setValue } from "../../features/percentageSlice";
 
 const StyledButton = styled.button`
   background-color: var(--very-dark-cyan);
@@ -18,7 +18,7 @@ function TipPercentageButton () {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(decrement());
+    dispatch(setValue());
     console.log("handle click triggered")
   };
 

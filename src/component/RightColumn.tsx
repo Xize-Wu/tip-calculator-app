@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import { useSelector } from 'react-redux'
+
+import type { RootState } from '../app/store'
+
 
 const StyledRightColumn = styled.div`
   border-radius: 8px;
@@ -9,8 +13,11 @@ const StyledRightColumn = styled.div`
 `;
 
 function RightColumn (){
+    const percentage = useSelector((state: RootState) => state.percentage.value)
+
     return (
         <StyledRightColumn>
+            <div>This is percentage: {percentage}</div>
             This is your styled right column
         </StyledRightColumn>
     )

@@ -7,7 +7,7 @@ const StyledCalculator = styled.div`
   border-radius: 8px;
   background-color: var(--white); 
   width: 67%;
-  height: 42%;
+  max-height: 82%;
   padding: 2rem;
 
   display:flex;
