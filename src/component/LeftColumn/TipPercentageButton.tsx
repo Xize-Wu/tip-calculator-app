@@ -1,6 +1,4 @@
 import { styled } from "styled-components";
-import { useDispatch } from "react-redux";
-import { setValue } from "../../features/percentageSlice";
 
 const StyledButton = styled.button`
   background-color: var(--very-dark-cyan);
@@ -12,17 +10,19 @@ const StyledButton = styled.button`
   border: none;
 `;
 
+interface TipPercentageButtonProps {
+  rate: number;
+  onClick:(num:number)=>void;
+}
 
-function TipPercentageButton () {
-
-  const dispatch = useDispatch();
-
+function TipPercentageButton ({rate, onClick}:TipPercentageButtonProps) {
   const handleClick = () => {
-    dispatch(setValue());
-    console.log("handle click triggered")
+    onClick(rate);
+    console.log("handle click triggered");
   };
 
-  return <StyledButton onClick={handleClick}>5%</StyledButton>;
+
+  return <StyledButton onClick={handleClick}>{rate * 100}%</StyledButton>;
 }
 
 export default TipPercentageButton;

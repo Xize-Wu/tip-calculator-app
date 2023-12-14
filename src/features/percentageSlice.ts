@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface PercentageState {
   value: number
@@ -12,8 +12,8 @@ export const percentageSlice = createSlice({
   name: 'percentage',
   initialState,
   reducers: {
-    setValue: (state) => {
-      state.value = 0.05
+    setValue: (state, action: PayloadAction<number>)=> {
+      state.value = action.payload
     },
   },
 })
