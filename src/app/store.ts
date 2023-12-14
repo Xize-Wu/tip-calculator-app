@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../features/counterSlice'
+import percentageReducer from '../features/percentageSlice'
 
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    percentage: percentageReducer,
   },
 })
 
