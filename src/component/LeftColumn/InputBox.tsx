@@ -25,6 +25,7 @@ const StyledSvg = styled.svg`
 `;
 
 const StyledInputField = styled.input`
+width: 100%;
   background-color: var(--white);
   color: var(--very-dark-cyan);
   font-size: 2rem;
