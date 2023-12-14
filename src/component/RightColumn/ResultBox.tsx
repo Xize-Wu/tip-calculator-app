@@ -38,18 +38,19 @@ function ResultBox({ label }: ResultBoxConfig) {
 
   return (
     <StyledResultBox>
+      {/* {console.log( typeof(1000 / 0))} */}
       <StyledTexts>
         <StyledLabel>{label}</StyledLabel>
         <StyledUnit>/ per person</StyledUnit>
       </StyledTexts>
       <StyledResult>
         {label === "Tip Amount"
-          ? isNaN(tipAmount)
+          ? isNaN(tipAmount) || tipAmount === Infinity
             ? 0
-            : tipAmount
-          : isNaN(total)
+            : Number(tipAmount.toFixed(2))
+          : isNaN(total) || total === Infinity
           ? 0
-          : total}
+          : Number(total.toFixed(2))}
       </StyledResult>
     </StyledResultBox>
   );

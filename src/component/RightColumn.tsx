@@ -15,17 +15,17 @@ const StyledRightColumn = styled.div`
 `;
 
 function RightColumn (){
-    const percentage = useSelector((state: RootState) => state.percentage.value)
+    // const percentage = useSelector((state: RootState) => state.percentage.value)
 
-    const bill = useSelector((state: RootState) => state.bill.value)
-    const people = useSelector((state: RootState) => state.people.value)
+    // const bill = useSelector((state: RootState) => state.bill.value)
+    // const people = useSelector((state: RootState) => state.people.value)
 
 
     return (
         <StyledRightColumn>
-            <div>This is percentage: {percentage}</div>
+            {/* <div>This is percentage: {percentage}</div>
             <div>This is bill: {bill}</div>
-            <div>This is people: {people}</div>
+            <div>This is people: {people}</div> */}
             <ResultBox label="Tip Amount"/>
             <ResultBox label="Total"/>
             <ResetButton/>
