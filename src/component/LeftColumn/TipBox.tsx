@@ -29,14 +29,14 @@ function TipBox() {
 
   return (
     <StyledBox>
-              <StyledTag>Select Tip %</StyledTag>
+      <StyledTag>Select Tip %</StyledTag>
       <StyledList>
         {tipPercentageArr.map((num) => {
           return (
             <TipButton key={num} rate={num} onClick={() => onClick(num)} />
           );
         })}
-        <TipInput />
+        <TipInput onClick={onClick} />
       </StyledList>
     </StyledBox>
   );

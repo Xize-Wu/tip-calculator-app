@@ -16,12 +16,13 @@ const StyledInput = styled.div`
 `;
 
 const StyledSvg = styled.svg`
-  position: relative;
-  left: -25.5rem;
-  top: 0.5rem;
-  width: 1.2rem;
-  height: 1.8rem;
-  pointer-events: none;
+position: absolute;
+top: 2rem;
+left: 1rem; 
+width: 1.2rem;
+height: 1.8rem;
+pointer-events: none;
+z-index: 1; 
 `;
 
 const StyledInputField = styled.input`
@@ -74,10 +75,10 @@ function InputBox({ tag, svg }: InputBoxProps) {
     <StyledInputComponent>
       <StyledTag>{tag}</StyledTag>
       <StyledInput>
-        <StyledInputField type="number" onChange={handleInputChange} />
         <StyledSvg xmlns="http://www.w3.org/2000/svg" width="11" height="17">
           <path fill="#9EBBBD" d={svg} />
         </StyledSvg>
+        <StyledInputField type="number" onChange={handleInputChange} />
       </StyledInput>
     </StyledInputComponent>
   );

@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { useDispatch } from "react-redux";
 
 const StyledInput = styled.div`
 width: 8.3rem;
@@ -37,18 +36,19 @@ height: 2.9rem;
   }
 `;
 
-function TipInput() {
-  const dispatch = useDispatch();
+interface TipInputProps {
+  onClick: (num: number) => void
+}
 
-//   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-//     tag === "Bill"
-//       ? dispatch(updateBillValue(parseFloat(event.target.value)))
-//       : dispatch(updatePeopleValue(parseInt(event.target.value)));
-//   }
+function TipInput({onClick}:TipInputProps) {
+
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    onClick(parseFloat(event.target.value)/100)
+  }
 
   return (
       <StyledInput>
-        <StyledInputField type="number" />
+        <StyledInputField type="number" onChange={handleInputChange}/>
       </StyledInput>
   );
 }
