@@ -1,4 +1,6 @@
 import { styled } from "styled-components";
+import { useDispatch } from "react-redux";
+import { updateValue } from "../../features/billSlice";
 
 const StyledInputComponent = styled.div`
   display: grid;
@@ -21,8 +23,6 @@ const StyledSvg = styled.svg`
   pointer-events: none;
 `;
 
-//
-
 const StyledInputField = styled.input`
   background-color: var(--white);
   color: var(--very-dark-cyan);
@@ -32,10 +32,21 @@ const StyledInputField = styled.input`
   cursor: pointer;
   text-align: right;
 
+  -webkit-appearance: none;
+  margin: 0;
+
   &:focus {
     border-color: var(--strong-cyan);
     outline: none;
     caret-color: transparent;
+  }
+
+  -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 `;
 
@@ -44,11 +55,17 @@ const StyledTag = styled.div`
 `;
 
 function InputBox() {
+  const dispatch = useDispatch();
+
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    dispatch(updateValue(parseFloat(event.target.value)))
+  }
+  
   return (
     <StyledInputComponent>
       <StyledTag>Bill</StyledTag>
       <StyledInput>
-      <StyledInputField />
+        <StyledInputField type="number" onChange={handleInputChange} />
         <StyledSvg xmlns="http://www.w3.org/2000/svg" width="11" height="17">
           <path
             fill="#9EBBBD"

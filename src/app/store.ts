@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import percentageReducer from '../features/percentageSlice'
+import billReducer from '../features/billSlice'
 
 
 export const store = configureStore({
   reducer: {
     percentage: percentageReducer,
+    bill:billReducer,
   },
 })
 

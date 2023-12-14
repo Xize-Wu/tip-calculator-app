@@ -15,9 +15,13 @@ const StyledRightColumn = styled.div`
 function RightColumn (){
     const percentage = useSelector((state: RootState) => state.percentage.value)
 
+    const bill = useSelector((state: RootState) => state.bill.value)
+    console.log(typeof(bill))
+
     return (
         <StyledRightColumn>
             <div>This is percentage: {percentage}</div>
+            <div>This is bill: {bill}</div>
         </StyledRightColumn>
     )
 }
