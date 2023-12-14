@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useSelector } from 'react-redux'
 
 import type { RootState } from '../app/store'
+import ResultBox from "./RightColumn/ResultBox";
 
 
 const StyledRightColumn = styled.div`
@@ -24,6 +25,8 @@ function RightColumn (){
             <div>This is percentage: {percentage}</div>
             <div>This is bill: {bill}</div>
             <div>This is people: {people}</div>
+            <ResultBox label="Tip Amount"/>
+            <ResultBox label="Total"/>
         </StyledRightColumn>
     )
 }
