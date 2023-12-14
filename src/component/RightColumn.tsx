@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 
 import type { RootState } from '../app/store'
 import ResultBox from "./RightColumn/ResultBox";
+import ResetButton from "./RightColumn/ResetButton";
 
 
 const StyledRightColumn = styled.div`
@@ -27,6 +28,7 @@ function RightColumn (){
             <div>This is people: {people}</div>
             <ResultBox label="Tip Amount"/>
             <ResultBox label="Total"/>
+            <ResetButton/>
         </StyledRightColumn>
     )
 }

@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateBillValue } from "../../features/billSlice";
 import { updatePeopleValue } from "../../features/peopleSlice";
+import type { RootState } from '../../app/store'
 
 const StyledInputComponent = styled.div`
   display: grid;
@@ -38,6 +39,12 @@ width: 100%;
   -webkit-appearance: none;
   margin: 0;
 
+  &:hover {
+    border-color: var(--strong-cyan);
+    outline: none;
+    caret-color: transparent;
+  }
+
   &:focus {
     border-color: var(--strong-cyan);
     outline: none;
@@ -64,6 +71,9 @@ interface InputBoxProps {
 
 function InputBox({ tag, svg }: InputBoxProps) {
   const dispatch = useDispatch();
+  const bill = useSelector((state: RootState) => state.bill.value)
+  const people = useSelector((state: RootState) => state.people.value)
+
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     tag === "Bill"
@@ -78,7 +88,7 @@ function InputBox({ tag, svg }: InputBoxProps) {
         <StyledSvg xmlns="http://www.w3.org/2000/svg" width="11" height="17">
           <path fill="#9EBBBD" d={svg} />
         </StyledSvg>
-        <StyledInputField type="number" onChange={handleInputChange} />
+        <StyledInputField type="number" placeholder = "0" value={tag === "Bill"?bill:people} onChange={handleInputChange} />
       </StyledInput>
     </StyledInputComponent>
   );

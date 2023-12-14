@@ -1,18 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface PeopleState {
-  value: number;
+  value: number|"";
 }
 
 const initialState: PeopleState = {
-  value: 0,
+  value: "",
 };
 
 const peopleSlice = createSlice({
   name: "people",
   initialState,
   reducers: {
-    updatePeopleValue: (state, action: PayloadAction<number>) => {
+    updatePeopleValue: (state, action: PayloadAction<number|"">) => {
       state.value = action.payload;
     },
   },

@@ -1,18 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface BillState {
-  value: number;
+  value: number|"";
 }
 
 const initialState: BillState = {
-  value: 0,
+  value: "",
 };
 
 const billSlice = createSlice({
   name: "bill",
   initialState,
   reducers: {
-    updateBillValue: (state, action: PayloadAction<number>) => {
+    updateBillValue: (state, action: PayloadAction<number|"">) => {
       state.value = action.payload;
     },
   },
