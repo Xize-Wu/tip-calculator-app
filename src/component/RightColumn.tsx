@@ -18,7 +18,6 @@ function RightColumn (){
     return (
         <StyledRightColumn>
             <div>This is percentage: {percentage}</div>
-            This is your styled right column
         </StyledRightColumn>
     )
 }
