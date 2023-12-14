@@ -12,11 +12,11 @@ const billSlice = createSlice({
   name: "bill",
   initialState,
   reducers: {
-    updateValue: (state, action: PayloadAction<number>) => {
+    updateBillValue: (state, action: PayloadAction<number>) => {
       state.value = action.payload;
     },
   },
 });
 
-export const { updateValue } = billSlice.actions;
+export const { updateBillValue } = billSlice.actions;
 export default billSlice.reducer;
