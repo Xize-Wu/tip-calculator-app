@@ -8,15 +8,13 @@ Welcome to my Tip Calculator App project! This project is part of the Frontend M
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Deployment](#deployment)
 - [Acknowledgements](#acknowledgements)
 
 
 ## Screenshots
 
-![Desktop View](screenshots/desktop-view.png)
-![Mobile View](screenshots/mobile-view.png)
+![Desktop View](public/screenshots/desktop-view.png)
+![Mobile View](public/screenshots/mobile-view.png)
 
 ## Features
 
