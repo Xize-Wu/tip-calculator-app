@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 const StyledInput = styled.div`
-width: 8.3rem;
-height: 3.3rem;
+  width: 100%;
+  height: 100%;
 `;
 
 const StyledInputField = styled.input`
@@ -14,12 +14,12 @@ const StyledInputField = styled.input`
   cursor: pointer;
   text-align: right;
 
-  width: 7.9rem;
-height: 2.9rem;
-
+  width: 100%;
+  height: 100%;
 
   -webkit-appearance: none;
   margin: 0;
+  padding: 0;
 
   &:focus {
     border-color: var(--strong-cyan);
@@ -37,19 +37,20 @@ height: 2.9rem;
 `;
 
 interface TipInputProps {
-  onClick: (num: number) => void
+  onClick: (num: number) => void;
 }
 
-function TipInput({onClick}:TipInputProps) {
-
+function TipInput({ onClick }: TipInputProps) {
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-    onClick(parseFloat(event.target.value)/100)
-  }
+    const inputText = event.target.value;
+    const inputValue = inputText === '' ? 0 : parseFloat(inputText) / 100;
+    onClick(inputValue);
+    }
 
   return (
-      <StyledInput>
-        <StyledInputField type="number" onChange={handleInputChange}/>
-      </StyledInput>
+    <StyledInput>
+      <StyledInputField type="text" onChange={handleInputChange} />
+    </StyledInput>
   );
 }
 
