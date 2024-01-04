@@ -2,13 +2,14 @@ import { styled } from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { updateBillValue } from "../../features/billSlice";
 import { updatePeopleValue } from "../../features/peopleSlice";
-import type { RootState } from '../../app/store'
+import type { RootState } from "../../app/store";
 
 const StyledInputComponent = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   align-items: flex-start;
   position: relative;
+  padding: 2rem;
 `;
 
 const StyledInput = styled.div`
@@ -17,17 +18,17 @@ const StyledInput = styled.div`
 `;
 
 const StyledSvg = styled.svg`
-position: absolute;
-top: 2rem;
-left: 1rem; 
-width: 1.2rem;
-height: 1.8rem;
-pointer-events: none;
-z-index: 1; 
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 1.2rem;
+  height: 1.8rem;
+  pointer-events: none;
+  z-index: 1;
 `;
 
 const StyledInputField = styled.input`
-width: 100%;
+  width: 100%;
   background-color: var(--white);
   color: var(--very-dark-cyan);
   font-size: 2rem;
@@ -62,6 +63,8 @@ width: 100%;
 
 const StyledTag = styled.div`
   color: var(--dark-grayish-cyan);
+  padding-left: 1.25rem;
+  padding-bottom: 0.35rem;
 `;
 
 interface InputBoxProps {
@@ -71,9 +74,8 @@ interface InputBoxProps {
 
 function InputBox({ tag, svg }: InputBoxProps) {
   const dispatch = useDispatch();
-  const bill = useSelector((state: RootState) => state.bill.value)
-  const people = useSelector((state: RootState) => state.people.value)
-
+  const bill = useSelector((state: RootState) => state.bill.value);
+  const people = useSelector((state: RootState) => state.people.value);
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     tag === "Bill"
@@ -83,12 +85,17 @@ function InputBox({ tag, svg }: InputBoxProps) {
 
   return (
     <StyledInputComponent>
+      <StyledSvg xmlns="http://www.w3.org/2000/svg" width="11" height="17">
+        <path fill="#9EBBBD" d={svg} />
+      </StyledSvg>
       <StyledTag>{tag}</StyledTag>
       <StyledInput>
-        <StyledSvg xmlns="http://www.w3.org/2000/svg" width="11" height="17">
-          <path fill="#9EBBBD" d={svg} />
-        </StyledSvg>
-        <StyledInputField type="number" placeholder = "0" value={tag === "Bill"?bill:people} onChange={handleInputChange} />
+        <StyledInputField
+          type="number"
+          placeholder="0"
+          value={tag === "Bill" ? bill : people}
+          onChange={handleInputChange}
+        />
       </StyledInput>
     </StyledInputComponent>
   );

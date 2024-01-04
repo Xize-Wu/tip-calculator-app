@@ -49,7 +49,9 @@ function TipInput({ onClick }: TipInputProps) {
 
   return (
     <StyledInput>
-      <StyledInputField type="text" onChange={handleInputChange} />
+      <StyledInputField type="text" 
+      placeholder="Custom"
+      onChange={handleInputChange} />
     </StyledInput>
   );
 }

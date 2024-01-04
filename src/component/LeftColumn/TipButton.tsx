@@ -1,21 +1,30 @@
 import { styled } from "styled-components";
 
 const StyledButton = styled.button`
-  background-color: var(--very-dark-cyan);
   color: var(--white);
-  width: 8.3rem;
-  height: 3.3rem;
   font-size: 2rem;
   border-radius: 8px;
   border: none;
+  background-color:var(--very-dark-cyan);
+
+
+  &:active {
+    background-color: var(--strong-cyan);
+  }
+
+  &:hover {
+    cursor: pointer; 
+  }
+
 `;
 
 interface TipButtonProps {
   rate: number;
   onClick:(num:number)=>void;
+  clicked:boolean;
 }
 
-function TipButton ({rate, onClick}:TipButtonProps) {
+function TipButton ({rate, onClick, clicked}:TipButtonProps) {
   const handleClick = () => {
     onClick(rate);
     console.log("handle click triggered");

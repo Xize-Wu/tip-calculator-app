@@ -4,11 +4,13 @@ import { useSelector } from "react-redux";
 import type { RootState } from "../../app/store";
 
 const StyledResultBox = styled.div`
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.5rem;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  width: 90%;
 `;
 
 const StyledTexts = styled.div``;
@@ -38,7 +40,6 @@ function ResultBox({ label }: ResultBoxConfig) {
 
   return (
     <StyledResultBox>
-      {/* {console.log( typeof(1000 / 0))} */}
       <StyledTexts>
         <StyledLabel>{label}</StyledLabel>
         <StyledUnit>/ per person</StyledUnit>

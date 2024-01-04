@@ -12,20 +12,15 @@ const StyledRightColumn = styled.div`
   max-width: 50%;
   min-height: 100%;
   flex: 1;
-`;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  `;
 
 function RightColumn (){
-    // const percentage = useSelector((state: RootState) => state.percentage.value)
-
-    // const bill = useSelector((state: RootState) => state.bill.value)
-    // const people = useSelector((state: RootState) => state.people.value)
-
 
     return (
         <StyledRightColumn>
-            {/* <div>This is percentage: {percentage}</div>
-            <div>This is bill: {bill}</div>
-            <div>This is people: {people}</div> */}
             <ResultBox label="Tip Amount"/>
             <ResultBox label="Total"/>
             <ResetButton/>

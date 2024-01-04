@@ -12,7 +12,7 @@ const StyledCalculator = styled.div`
 
   display:flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 4rem;
 `;
 
 
