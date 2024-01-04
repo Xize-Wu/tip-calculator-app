@@ -55,4 +55,4 @@ To get started with this project, follow these steps:
 ## Acknowledgements
 
 - Design: Frontend Mentor
-- Assets: [Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX) (Provide attribution if required)
+- Assets: [Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX)
