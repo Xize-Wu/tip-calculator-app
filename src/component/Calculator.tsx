@@ -13,6 +13,15 @@ const StyledCalculator = styled.div`
   display:flex;
   flex-direction: row;
   gap: 4rem;
+
+  @media (max-width: 768px) {
+    width: 67%;
+    max-height: none;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 

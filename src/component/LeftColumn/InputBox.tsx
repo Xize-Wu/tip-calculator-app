@@ -10,6 +10,9 @@ const StyledInputComponent = styled.div`
   align-items: flex-start;
   position: relative;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+  }
 `;
 
 const StyledInput = styled.div`

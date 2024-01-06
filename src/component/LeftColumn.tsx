@@ -6,9 +6,13 @@ const StyledLeftColumn = styled.div`
   border-radius: 8px;
   max-width: 50%;
   min-height: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid; 
+  grid-template-rows: auto 1fr auto; 
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+    align-items: start; 
+  }
 `;
 
 const svgPathArr: string[] = [
