@@ -36,8 +36,7 @@ const StyledInputField = styled.input`
   color: var(--very-dark-cyan);
   font-size: 2rem;
   border-radius: 8px;
-  border: 3px solid var(--light-grayish-cyan);
-  cursor: pointer;
+  border:  solid ${(props) => (props.isError ? '2px #D7697D' : '3px var(--light-grayish-cyan)')};
   text-align: right;
 
   -webkit-appearance: none;
@@ -70,6 +69,15 @@ const StyledTag = styled.div`
   padding-bottom: 0.35rem;
 `;
 
+const StyledErrorMsg = styled.div`
+  color: #D7697D;
+  font-size: 16px;
+`
+
+const StyledTagComponent = styled.div`
+display: flex;
+justify-content: space-between;`
+
 interface InputBoxProps {
   tag: "Bill" | "People";
   svg: string;
@@ -86,18 +94,25 @@ function InputBox({ tag, svg }: InputBoxProps) {
       : dispatch(updatePeopleValue(parseInt(event.target.value)));
   }
 
+  const isError=(tag === "People" && people === 0 )? true: false
+
   return (
     <StyledInputComponent>
+            <StyledTagComponent>
       <StyledSvg xmlns="http://www.w3.org/2000/svg" width="11" height="17">
         <path fill="#9EBBBD" d={svg} />
       </StyledSvg>
+
       <StyledTag>{tag}</StyledTag>
+      {isError?<StyledErrorMsg>Can't be zero</StyledErrorMsg>:<></>}
+      </StyledTagComponent>
       <StyledInput>
         <StyledInputField
           type="number"
           placeholder="0"
           value={tag === "Bill" ? bill : people}
           onChange={handleInputChange}
+          isError={isError}
         />
       </StyledInput>
     </StyledInputComponent>
